@@ -97,5 +97,20 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Opportunity(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("opportunities");
+
+                return View("Opportunities");
+            }
+            else
+            {
+                ViewBag.Opportunity = _dynamicsConnector.GetJObject($"opportunities({id})");
+
+                return View("OpportunityDetail");
+            }
+        }
     }
 }
