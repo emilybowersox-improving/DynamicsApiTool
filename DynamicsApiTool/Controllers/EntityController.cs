@@ -31,5 +31,21 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
-    }
+        public IActionResult Users(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+              ViewBag.Data = _dynamicsConnector.GetJObject("systemusers");
+
+              return View("Users");
+            }
+            else
+            {
+              ViewBag.User = _dynamicsConnector.GetJObject($"systemusers({id})");
+
+              return View("UserDetail");
+            }
+        }
+
+  }
 }

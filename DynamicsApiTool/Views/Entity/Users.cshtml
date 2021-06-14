@@ -1,0 +1,26 @@
+﻿@{
+	ViewData["Title"] = "Users";
+}
+
+<div>
+	<h1 class="display-4">Users</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>System User ID</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var user in ViewBag.Data.value)
+			{
+				<tr>
+					<td><a href="/entity/users/@user["systemuserid"]">@user["systemuserid"]</a></td>
+					<td>@user["fullname"]</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+
+</div>
