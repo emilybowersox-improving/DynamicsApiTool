@@ -31,5 +31,21 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult PhoneCall(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("phonecalls");
+
+                return View("PhoneCalls");
+            }
+            else
+            {
+                ViewBag.Account = _dynamicsConnector.GetJObject($"phonecalls({id})");
+
+                return View("PhoneCallDetail");
+            }
+        }
+
     }
 }
