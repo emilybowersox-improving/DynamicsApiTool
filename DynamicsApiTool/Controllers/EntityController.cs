@@ -77,7 +77,6 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
-<<<<<<< HEAD
         public IActionResult Contact(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -94,6 +93,7 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+
         public IActionResult Opportunity(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -109,7 +109,7 @@ namespace DynamicsApiTool.Controllers
                 return View("OpportunityDetail");
             }
         }
-=======
+
         public IActionResult Campaign(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -126,6 +126,22 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
->>>>>>> campaigns
+        public IActionResult Product(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("product");
+
+                return View("Products");
+            }
+            else
+            {
+                ViewBag.Account = _dynamicsConnector.GetJObject($"products({id})");
+
+                return View("ProductDetail");
+            }
+        }
+
+
     }
 }
