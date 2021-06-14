@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1 class="display-4">Contacts</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Contact Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in ViewBag.Data.value)
+            {
+                <tr>
+                    <td><a href="/entity/contact/@contact["contactid"]">@contact["contactid"]</a></td>
+                    <td>@contact["fullname"]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
