@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1 class="display-4">Accounts</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Account Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var account in ViewBag.Data.value)
+        {
+            <tr>
+                <td><a href="/entity/account/@account["accountid"]">@account["accountid"]</a></td>
+                <td>@account["name"]</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>
