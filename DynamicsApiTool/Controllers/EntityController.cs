@@ -31,5 +31,21 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Product(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("product");
+
+                return View("Products");
+            }
+            else
+            {
+                ViewBag.Account = _dynamicsConnector.GetJObject($"products({id})");
+
+                return View("ProductDetail");
+            }
+        }
+
     }
 }
