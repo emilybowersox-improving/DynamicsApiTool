@@ -46,6 +46,21 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Competitor(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("competitors");
+
+                return View("Competitors");
+            }
+            else
+            {
+                ViewBag.Competitor = _dynamicsConnector.GetJObject($"competitors({id})");
+
+                return View("CompetitorDetail");
+            }
+        }
         public IActionResult Users(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
