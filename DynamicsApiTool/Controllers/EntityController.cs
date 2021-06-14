@@ -31,5 +31,21 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Fax(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("faxes");
+
+                return View("Faxes");
+            }
+            else
+            {
+                ViewBag.Fax = _dynamicsConnector.GetJObject($"faxes({id})");
+
+                return View("FaxDetail");
+            }
+        }
+
     }
 }
