@@ -46,11 +46,9 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         public IActionResult Competitor(string id)
         {
-            if(String.IsNullOrWhiteSpace(id))
+            if (String.IsNullOrWhiteSpace(id))
             {
                 ViewBag.Data = _dynamicsConnector.GetJObject("competitors");
 
@@ -61,8 +59,8 @@ namespace DynamicsApiTool.Controllers
                 ViewBag.Competitor = _dynamicsConnector.GetJObject($"competitors({id})");
 
                 return View("CompetitorDetail");
-=======
-=======
+            }
+        }
         public IActionResult Users(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -79,7 +77,6 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
->>>>>>> c3747f8ad1704004a8f839b5557fbb3f595cc9a0
         public IActionResult Contact(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -93,7 +90,6 @@ namespace DynamicsApiTool.Controllers
                 ViewBag.Contact = _dynamicsConnector.GetJObject($"contacts({id})");
 
                 return View("ContactDetail");
->>>>>>> 93a8c12c585afbe0f0448ad8a17c61f7ec78d7fc
             }
         }
 
