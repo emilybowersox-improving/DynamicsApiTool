@@ -19,7 +19,7 @@ namespace DynamicsApiTool.Controllers
         {
             if (String.IsNullOrWhiteSpace(id))
             {
-                ViewBag.Data = _dynamicsConnector.GetJObject("accounts");
+                ViewBag.Data = _dynamicsConnector.GetJObject("opportunity");
 
                 return View("Accounts");
             }
@@ -28,6 +28,22 @@ namespace DynamicsApiTool.Controllers
                 ViewBag.Account = _dynamicsConnector.GetJObject($"accounts({id})");
 
                 return View("AccountDetail");
+            }
+        }
+
+        public IActionResult Opportunity(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("opportunities");
+
+                return View("Opportunities");
+            }
+            else
+            {
+                ViewBag.Opportunity = _dynamicsConnector.GetJObject($"opportunities({id})");
+
+                return View("OpportunityDetail");
             }
         }
 
