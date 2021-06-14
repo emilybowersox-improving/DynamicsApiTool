@@ -48,4 +48,21 @@ namespace DynamicsApiTool.Controllers
         }
 
   }
+        public IActionResult Contact(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("contacts");
+
+                return View("Contacts");
+            }
+            else
+            {
+                ViewBag.Contact = _dynamicsConnector.GetJObject($"contacts({id})");
+
+                return View("ContactDetail");
+            }
+        }
+
+    }
 }
