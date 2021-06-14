@@ -47,7 +47,6 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
-  }
         public IActionResult Contact(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
