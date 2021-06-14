@@ -31,5 +31,19 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Quote(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject($"quotes");
+                return View("Quotes");
+            }
+            else 
+            {
+                ViewBag.Quote = _dynamicsConnector.GetJObject($"quotes({id})");
+                return View("QuoteDetail");
+            }
+        }
+
     }
 }
