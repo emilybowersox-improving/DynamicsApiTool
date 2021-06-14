@@ -30,6 +30,21 @@ namespace DynamicsApiTool.Controllers
                 return View("AccountDetail");
             }
         }
+        public IActionResult Lead(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("leads");
+
+                return View("Leads");
+            }
+            else
+            {
+                ViewBag.Lead = _dynamicsConnector.GetJObject($"leads({id})");
+
+                return View("LeadDetail");
+            }
+        }
 
 <<<<<<< HEAD
         public IActionResult Competitor(string id)
