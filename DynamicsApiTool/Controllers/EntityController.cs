@@ -30,6 +30,53 @@ namespace DynamicsApiTool.Controllers
                 return View("AccountDetail");
             }
         }
+        public IActionResult Lead(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("leads");
+
+                return View("Leads");
+            }
+            else
+            {
+                ViewBag.Lead = _dynamicsConnector.GetJObject($"leads({id})");
+
+                return View("LeadDetail");
+            }
+        }
+
+        public IActionResult Users(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+              ViewBag.Data = _dynamicsConnector.GetJObject("systemusers");
+
+              return View("Users");
+            }
+            else
+            {
+              ViewBag.User = _dynamicsConnector.GetJObject($"systemusers({id})");
+
+              return View("UserDetail");
+            }
+        }
+
+        public IActionResult Contact(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("contacts");
+
+                return View("Contacts");
+            }
+            else
+            {
+                ViewBag.Contact = _dynamicsConnector.GetJObject($"contacts({id})");
+
+                return View("ContactDetail");
+            }
+        }
 
         public IActionResult Product(string id)
         {

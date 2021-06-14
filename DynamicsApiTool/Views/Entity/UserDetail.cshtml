@@ -1,0 +1,11 @@
+﻿@{
+	ViewData["Title"] = "User Details";
+}
+
+<div>
+	<h1 class="display-4">User (ID @ViewBag.User["systemuserid"])</h1>
+
+	<p><b>Name: </b> @ViewBag.User["fullname"]</p>
+	<p><b>Internal Email Address: </b> @ViewBag.User["internalemailaddress"]</p>
+
+</div>
