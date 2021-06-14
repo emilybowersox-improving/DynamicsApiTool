@@ -31,5 +31,21 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Campaign(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("campaigns");
+
+                return View("Campaigns");
+            }
+            else
+            {
+                ViewBag.Campaign = _dynamicsConnector.GetJObject($"campaigns({id})");
+
+                return View("CampaignDetail");
+            }
+        }
+
     }
 }
