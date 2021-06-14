@@ -30,6 +30,22 @@ namespace DynamicsApiTool.Controllers
                 return View("AccountDetail");
             }
         }
+        public IActionResult Invoice(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("invoices");
+
+                return View("Invoices");
+            }
+            else
+            {
+                ViewBag.Invoice = _dynamicsConnector.GetJObject($"invoices({id})");
+
+
+                return View("InvoiceDetail");
+            }
+        }
         public IActionResult Lead(string id)
         {
             if (String.IsNullOrWhiteSpace(id))

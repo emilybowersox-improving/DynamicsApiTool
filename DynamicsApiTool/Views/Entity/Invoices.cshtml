@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Invoices";
+}
+
+<div>
+    <h1 class="display-4">Invoices</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Invoice ID</th>
+                <th>Total Amount</th>
+                <th>Date Delivered</th>
+                <th>Due Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var invoice in ViewBag.Data.value)
+            {
+            <tr>
+                <td><a href="/entity/invoice/@invoice["invoiceid"]">@invoice["invoicenumber"]</a></td>
+                <td>@invoice["totalamount"]</td>
+                <td>@invoice["datedelivered"]</td>
+                <td>@invoice["duedate"]</td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
