@@ -47,6 +47,7 @@ namespace DynamicsApiTool.Controllers
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public IActionResult Competitor(string id)
         {
             if(String.IsNullOrWhiteSpace(id))
@@ -61,6 +62,24 @@ namespace DynamicsApiTool.Controllers
 
                 return View("CompetitorDetail");
 =======
+=======
+        public IActionResult Users(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+              ViewBag.Data = _dynamicsConnector.GetJObject("systemusers");
+
+              return View("Users");
+            }
+            else
+            {
+              ViewBag.User = _dynamicsConnector.GetJObject($"systemusers({id})");
+
+              return View("UserDetail");
+            }
+        }
+
+>>>>>>> c3747f8ad1704004a8f839b5557fbb3f595cc9a0
         public IActionResult Contact(string id)
         {
             if (String.IsNullOrWhiteSpace(id))

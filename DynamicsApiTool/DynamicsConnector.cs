@@ -52,7 +52,7 @@ namespace DynamicsApiTool
             // Creates a context for login.microsoftonline.com (Azure AD common authentication)
             var authContextUrl = $"{_authString}{_tenantId}";
             var authContext = new AuthenticationContext(authContextUrl);
-
+       
             // Creates a credential from the client id and secret
             var clientCredentials = new ClientCredential(_clientId, _clientSecret);
 
@@ -113,7 +113,7 @@ namespace DynamicsApiTool
         {
             var responseBody = GetResponseString(uri);
             return JObject.Parse(responseBody);
-        }
+          }
 
         private HttpRequestMessage CreateHttpRequestMessage(string method, string uri)
         {
