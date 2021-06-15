@@ -93,6 +93,22 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+<<<<<<< HEAD
+=======
+        public IActionResult Quote(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject($"quotes");
+                return View("Quotes");
+            }
+            else 
+            {
+                ViewBag.Quote = _dynamicsConnector.GetJObject($"quotes({id})");
+                return View("QuoteDetail");
+            }
+        }
+>>>>>>> 0cf7789bf25aa2469dd92afe440dcff2e5395fd4
 
         public IActionResult Opportunity(string id)
         {
