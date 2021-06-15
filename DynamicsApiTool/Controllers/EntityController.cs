@@ -109,6 +109,7 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+
         public IActionResult Quote(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -122,6 +123,7 @@ namespace DynamicsApiTool.Controllers
                 return View("QuoteDetail");
             }
         }
+
 
         public IActionResult Opportunity(string id)
         {
@@ -154,6 +156,23 @@ namespace DynamicsApiTool.Controllers
                 return View("CampaignDetail");
             }
         }
+
+        public IActionResult Product(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("products");
+
+                return View("Products");
+            }
+            else
+            {
+                ViewBag.Account = _dynamicsConnector.GetJObject($"products({id})");
+
+                return View("ProductDetail");
+            }
+        }
+        
 
         public IActionResult PhoneCall(string id)
         {
