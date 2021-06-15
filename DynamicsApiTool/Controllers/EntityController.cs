@@ -46,6 +46,21 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Competitor(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("competitors");
+
+                return View("Competitors");
+            }
+            else
+            {
+                ViewBag.Competitor = _dynamicsConnector.GetJObject($"competitors({id})");
+
+                return View("CompetitorDetail");
+            }
+        }
         public IActionResult Users(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -75,6 +90,52 @@ namespace DynamicsApiTool.Controllers
                 ViewBag.Contact = _dynamicsConnector.GetJObject($"contacts({id})");
 
                 return View("ContactDetail");
+            }
+        }
+
+        public IActionResult Quote(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject($"quotes");
+                return View("Quotes");
+            }
+            else 
+            {
+                ViewBag.Quote = _dynamicsConnector.GetJObject($"quotes({id})");
+                return View("QuoteDetail");
+            }
+        }
+
+        public IActionResult Opportunity(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("opportunities");
+
+                return View("Opportunities");
+            }
+            else
+            {
+                ViewBag.Opportunity = _dynamicsConnector.GetJObject($"opportunities({id})");
+
+                return View("OpportunityDetail");
+            }
+        }
+
+        public IActionResult Campaign(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("campaigns");
+
+                return View("Campaigns");
+            }
+            else
+            {
+                ViewBag.Campaign = _dynamicsConnector.GetJObject($"campaigns({id})");
+
+                return View("CampaignDetail");
             }
         }
 

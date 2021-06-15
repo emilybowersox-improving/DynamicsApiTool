@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1 class="display-4">Quote (@ViewBag.Quote["quoteid"])</h1>
+
+    <p><b>Name: </b>@ViewBag.Quote["name"]</p>
+    <p><b>Quote #: </b>@ViewBag.Quote["quotenumber"]</p>
+    <p><b>Account: </b>@ViewBag.Quote["msdyn_account"]</p>
+    <p><b>Price List: </b>@ViewBag.Quote["pricelevelid"]</p>
+    <p><b>Status: </b>@ViewBag.Quote["statecode"]</p>
+
+</div>
