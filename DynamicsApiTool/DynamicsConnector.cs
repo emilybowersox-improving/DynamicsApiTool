@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
 
 namespace DynamicsApiTool
 {
