@@ -93,8 +93,7 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
-<<<<<<< HEAD
-=======
+
         public IActionResult Quote(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -108,7 +107,7 @@ namespace DynamicsApiTool.Controllers
                 return View("QuoteDetail");
             }
         }
->>>>>>> 0cf7789bf25aa2469dd92afe440dcff2e5395fd4
+
 
         public IActionResult Opportunity(string id)
         {
@@ -146,7 +145,7 @@ namespace DynamicsApiTool.Controllers
         {
             if (String.IsNullOrWhiteSpace(id))
             {
-                ViewBag.Data = _dynamicsConnector.GetJObject("product");
+                ViewBag.Data = _dynamicsConnector.GetJObject("products");
 
                 return View("Products");
             }
@@ -157,7 +156,7 @@ namespace DynamicsApiTool.Controllers
                 return View("ProductDetail");
             }
         }
-
+        
 
     }
 }
