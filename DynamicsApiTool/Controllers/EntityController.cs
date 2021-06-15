@@ -109,6 +109,20 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult Quote(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject($"quotes");
+                return View("Quotes");
+            }
+            else 
+            {
+                ViewBag.Quote = _dynamicsConnector.GetJObject($"quotes({id})");
+                return View("QuoteDetail");
+            }
+        }
+
         public IActionResult Opportunity(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -124,6 +138,7 @@ namespace DynamicsApiTool.Controllers
                 return View("OpportunityDetail");
             }
         }
+
         public IActionResult Campaign(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -140,6 +155,37 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+        public IActionResult PhoneCall(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("phonecalls");
+
+                return View("PhoneCalls");
+            }
+            else
+            {
+                ViewBag.Account = _dynamicsConnector.GetJObject($"phonecalls({id})");
+
+                return View("PhoneCallDetail");
+            }
+        }
+
+        public IActionResult Fax(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("faxes");
+
+                return View("Faxes");
+            }
+            else
+            {
+                ViewBag.Fax = _dynamicsConnector.GetJObject($"faxes({id})");
+
+                return View("FaxDetail");
+            }
+        }
 
     }
 }

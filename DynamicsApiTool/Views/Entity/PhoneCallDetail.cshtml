@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1 class="display-4">Phone Call</h1>
+    <h3>ActivityId: @ViewBag.Account["activityid"]</h3>
+
+    <p><b>Subject: </b> @ViewBag.Account["subject"]</p>
+    <p><b>Description: </b> @ViewBag.Account["description"]</p>
+    <p><b>Left Voicemail: </b> @ViewBag.Account["leftvoicemail"]</p>
+
+</div>
