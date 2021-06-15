@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    <h1 class="display-4">Competitors</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Competitor Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var competitor in ViewBag.Data.value)
+        {
+            <tr>
+                <td><a href="/entity/competitor/@competitor["competitorid"]">@competitor["competitorid"]</a></td>
+                <td>@competitor["name"]</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
