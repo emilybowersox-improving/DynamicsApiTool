@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Faxes Page";
+}
+
+<div>
+    <h1 class="display-4">Faxes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fax Id</th>
+                <th>Fax Subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fax in ViewBag.Data.value)
+            {
+                <tr>
+                    <td><a href="/entity/fax/@fax["activityid"]">@fax["activityid"]</a></td>
+                    <td>@fax["subject"]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

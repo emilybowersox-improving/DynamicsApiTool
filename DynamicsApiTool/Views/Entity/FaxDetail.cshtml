@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Fax Detail";
+}
+
+<div>
+    <h1 class="display-4">Fax (ID @ViewBag.Fax["activityid"])</h1>
+
+    <p><b>Subject: </b>@ViewBag.Fax["subject"]</p>
+    <p><b>Duration: </b>@ViewBag.Fax["actualdurationminutes"] minutes</p>
+    <p><b>Created On: </b>@ViewBag.Fax["createdon"]</p>
+    <p><b>Modified On: </b>@ViewBag.Fax["modifiedon"]</p>
+
+</div>
