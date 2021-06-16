@@ -2,6 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
+@*@model DynamicsApiTool.ViewModel.Entity.CampaignDetailViewModel*@
+
+
+
+
+
+@*we do want to iterate over each key-value pair in ViewBag.Campaign *@
+
+@*@foreach (var thing in ViewBag.Campaign)
+{
+    <p>@thing.Key: @thing.Value</p>
+}
+    *@
+
+
+
 <div>
     <h1 class="display-4">Campaign (ID @ViewBag.Campaign["campaignid"])</h1>
 
@@ -9,4 +25,11 @@
     <p><b>Email Address: </b> @ViewBag.Campaign["emailaddress"]</p>
     <p><b>Offer: </b> @ViewBag.Campaign["objective"]</p>
 
+    <p>View Bag</p>
+    <p>@ViewBag</p>
+    <p>ViewBag.Campaign</p>
+    <p>@ViewBag.Campaign</p>
+
 </div>
+    
+

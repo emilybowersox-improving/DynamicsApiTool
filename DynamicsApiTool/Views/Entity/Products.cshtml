@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1 class="display-4">Products</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in ViewBag.Data.value)
+            {
+                <tr>
+
+                    <td><a href="/entity/lead/@product["productname"]">@product["productid"]</a></td>
+                    <td>@product["description"]</td>
+                    <td>@product["price"]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="C:\Users\AmandaGarrison\source\repos\DynamicsApiTool\DynamicsApiTool\Views\Entity\Products.cshtml">C:\Users\AmandaGarrison\source\repos\DynamicsApiTool\DynamicsApiTool\Views\Entity\Products.cshtml</a>
+</div>

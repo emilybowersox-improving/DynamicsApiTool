@@ -30,6 +30,22 @@ namespace DynamicsApiTool.Controllers
                 return View("AccountDetail");
             }
         }
+        public IActionResult Invoice(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("invoices");
+
+                return View("Invoices");
+            }
+            else
+            {
+                ViewBag.Invoice = _dynamicsConnector.GetJObject($"invoices({id})");
+
+
+                return View("InvoiceDetail");
+            }
+        }
         public IActionResult Lead(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -93,6 +109,22 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+
+        public IActionResult Quote(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject($"quotes");
+                return View("Quotes");
+            }
+            else 
+            {
+                ViewBag.Quote = _dynamicsConnector.GetJObject($"quotes({id})");
+                return View("QuoteDetail");
+            }
+        }
+
+
         public IActionResult Opportunity(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -125,5 +157,57 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
+<<<<<<< HEAD
+=======
+        public IActionResult Product(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("products");
+
+                return View("Products");
+            }
+            else
+            {
+                ViewBag.Account = _dynamicsConnector.GetJObject($"products({id})");
+
+                return View("ProductDetail");
+            }
+        }
+        
+
+        public IActionResult PhoneCall(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("phonecalls");
+
+                return View("PhoneCalls");
+            }
+            else
+            {
+                ViewBag.Account = _dynamicsConnector.GetJObject($"phonecalls({id})");
+
+                return View("PhoneCallDetail");
+            }
+        }
+
+        public IActionResult Fax(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                ViewBag.Data = _dynamicsConnector.GetJObject("faxes");
+
+                return View("Faxes");
+            }
+            else
+            {
+                ViewBag.Fax = _dynamicsConnector.GetJObject($"faxes({id})");
+
+                return View("FaxDetail");
+            }
+        }
+
+>>>>>>> 6cb66682f65034ae14c212159ccf2ceb01e532b6
     }
 }
