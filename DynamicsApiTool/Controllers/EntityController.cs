@@ -81,15 +81,15 @@ namespace DynamicsApiTool.Controllers
         {
             if (String.IsNullOrWhiteSpace(id))
             {
-              ViewBag.Data = _dynamicsConnector.GetJObject("systemusers");
+                ViewBag.Data = _dynamicsConnector.GetJObject("systemusers");
 
-              return View("Users");
+                return View("Users");
             }
             else
             {
-              ViewBag.User = _dynamicsConnector.GetJObject($"systemusers({id})");
+                ViewBag.User = _dynamicsConnector.GetJObject($"systemusers({id})");
 
-              return View("UserDetail");
+                return View("UserDetail");
             }
         }
 
@@ -117,7 +117,7 @@ namespace DynamicsApiTool.Controllers
                 ViewBag.Data = _dynamicsConnector.GetJObject($"quotes");
                 return View("Quotes");
             }
-            else 
+            else
             {
                 ViewBag.Quote = _dynamicsConnector.GetJObject($"quotes({id})");
                 return View("QuoteDetail");
@@ -157,8 +157,6 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
-<<<<<<< HEAD
-=======
         public IActionResult Product(string id)
         {
             if (String.IsNullOrWhiteSpace(id))
@@ -174,7 +172,7 @@ namespace DynamicsApiTool.Controllers
                 return View("ProductDetail");
             }
         }
-        
+
 
         public IActionResult PhoneCall(string id)
         {
@@ -208,6 +206,6 @@ namespace DynamicsApiTool.Controllers
             }
         }
 
->>>>>>> 6cb66682f65034ae14c212159ccf2ceb01e532b6
+
     }
 }
